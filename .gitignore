@@ -3,3 +3,12 @@
 *.index
 *.data-*
 .vagrant
+.ipynb_checkpoints
+.keras
+.local
+.jupyter
+.ipython
+.cache
+tensorflow_datasets
+projects/word-embeddings/meta.tsv
+projects/word-embeddings/vecs.tsv
