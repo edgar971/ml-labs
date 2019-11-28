@@ -8,4 +8,4 @@ services:
     environment:
       JUPYTE_ENABLE_LAB: 'yes'
     volumes:
-      - ./projects:/home/jovyan
+      - ./projects:/home/projects
