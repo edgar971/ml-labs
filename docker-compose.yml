@@ -9,3 +9,11 @@ services:
       JUPYTE_ENABLE_LAB: 'yes'
     volumes:
       - ./projects:/home/projects
+  tf-server:
+    image: tensorflow/serving
+    ports:
+    - "8501:8501"
+    environment:
+      MODEL_NAME: 'mnist'
+    volumes:
+      - ./models/mnist:/models/mnist
