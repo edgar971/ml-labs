@@ -4,3 +4,4 @@ jupyterlab
 pydot
 matplotlib
 scikit-learn
+pandas
