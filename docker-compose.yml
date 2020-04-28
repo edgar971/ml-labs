@@ -9,6 +9,8 @@ services:
       JUPYTE_ENABLE_LAB: 'yes'
     volumes:
       - ./projects:/home/projects
+      - ./jupyter-lab/settings:/usr/local/share/jupyter/lab/settings
+      - ./jupyter-lab/requirements.txt:/home/requirements.txt
   tf-server:
     image: tensorflow/serving
     ports:
