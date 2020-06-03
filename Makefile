@@ -22,6 +22,10 @@ start:
 	docker-compose up -d
 	@echo "JupyterLab running on: http://localhost:8888/lab"
 
+start-gpu:
+	docker-compose stop
+	docker run --gpus all --rm -p 8888:8888 -v $(ROOT_DIR)/projects:/tf  tensorflow/tensorflow:latest-gpu-jupyter
+
 restart:
 	docker-compose down
 	docker-compose up -d
