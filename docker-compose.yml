@@ -1,4 +1,5 @@
 version: '3'
+
 services:
   jupyter:
     build: 
@@ -11,11 +12,10 @@ services:
       - ./projects:/home/projects
       - ./jupyter-lab/settings:/usr/local/share/jupyter/lab/settings
       - ./jupyter-lab/requirements.txt:/home/requirements.txt
-  tf-server:
-    image: tensorflow/serving
-    ports:
-    - "8501:8501"
-    environment:
-      MODEL_NAME: 'mnist'
-    volumes:
-      - ./models/mnist:/models/mnist
+      
+  # tf-server:
+  #   image: tensorflow/serving
+  #   ports:
+  #   - "8501:8501"
+  #   volumes:
+  #     - ./models:/models
