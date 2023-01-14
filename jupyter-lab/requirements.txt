@@ -1,7 +1,0 @@
-tensorflow
-tensorflow-datasets
-jupyterlab
-pydot
-matplotlib
-scikit-learn
-pandas
