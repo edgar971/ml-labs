@@ -20,7 +20,6 @@
     "features": {
         "ghcr.io/devcontainers/features/python:1": {
             "installJupyterlab": true,
-            "version": "3.8.5",
             "optimize": true
         }
     }
