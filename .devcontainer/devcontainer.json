@@ -1,12 +1,16 @@
 {
 	"name": "Notebooks",
 	"build": {
+		"context": "../",
 		"dockerfile": "Dockerfile"
 	},
+	"workspaceMount": "source=${localWorkspaceFolder},target=/home/jovyan/work,type=bind,consistency=cached",
+	"workspaceFolder": "/home/jovyan/work",
 	"overrideCommand": false,
-	
 	// Forward Jupyter port locally, mark required
-	"forwardPorts": [8888],
+	"forwardPorts": [
+		8888
+	],
 	"portsAttributes": {
 		"8888": {
 			"label": "Jupyter",
@@ -14,16 +18,14 @@
 			"onAutoForward": "ignore"
 		}
 	},
-
 	// Configure tool-specific properties.
 	"customizations": {
 		// Configure properties specific to VS Code.
 		"vscode": {
 			// Set *default* container specific settings.json values on container create.
-			"settings": { 
+			"settings": {
 				"python.defaultInterpreterPath": "/opt/conda/bin/python"
 			},
-			
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"ms-python.python",
@@ -31,10 +33,8 @@
 			]
 		}
 	},
-
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "pip3 install --user -r requirements.txt",
-
+	"postCreateCommand": "pip install -r requirements.txt",
 	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "jovyan"
 }

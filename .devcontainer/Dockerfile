@@ -1,12 +1,12 @@
 # See here for image contents: https://hub.docker.com/r/jupyter/datascience-notebook/
 
-FROM jupyter/datascience-notebook
+FROM jupyter/datascience-notebook:lab-3.5.3
 
 # We want to run common-debian.sh from here:
 # https://github.com/microsoft/vscode-dev-containers/tree/main/script-library#development-container-scripts
 # But that script assumes that the main non-root user (in this case jovyan)
 # is in a group with the same name (in this case jovyan).  So we must first make that so.
-COPY ./common-debian.sh /tmp/library-scripts/
+COPY .devcontainer/common-debian.sh /tmp/library-scripts/
 USER root
 RUN apt-get update \
  && groupadd jovyan \
